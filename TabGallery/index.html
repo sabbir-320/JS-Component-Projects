@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab">
+            <img onclick="showTab(this)" src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="Sunrise">
+            <img onclick="showTab(this)" src="https://www.w3schools.com/howto/img_woods_wide.jpg" alt="Nature">
+            <img onclick="showTab(this)" src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="Snow">
+            <img onclick="showTab(this)" src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="Mountains">
+        </div>
+        <div class="gallery">
+            <span onclick="closeGallery(this)" class="closeBtn">&times;</span>
+            <img src="" alt="" class="expand-img">
+            <p class="img-name"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

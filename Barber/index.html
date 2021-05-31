@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber</title>
+    <link rel=" preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Banner Section -->
+    <section id="banner">
+        <img src="images/logo.png" alt="logo" class="logo">
+        <div class="banner-text">
+            <h1>Hair Studio</h1>
+            <p>Style Your Is Style Your Life</p>
+            <div class="banner-btn">
+                <button><span></span><a href="#">Find Out</a></button>
+                <button><span></span><a href="#">Read More</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Navbar -->
+    <nav id="side-nav">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">SERVICES</a></li>
+            <li><a href="">TESTIMONIAL</a></li>
+            <li><a href="">MEET US</a></li>
+        </ul>
+    </nav>
+    <div id="menu-btn">
+        <img src="images/menu.png" alt="menu">
+    </div>
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const sideNav = document.getElementById('side-nav');
+
+        menuBtn.onclick = function () {
+            sideNav.style.display == "none" ? sideNav.style.display = "block" : sideNav.style.display = "none"
+        }
+    </script>
+</body>
+</html>

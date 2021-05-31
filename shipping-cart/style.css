@@ -1,0 +1,14 @@
+.container{
+    width: 90%;
+    margin: auto;
+}
+img{
+    width: 60%;
+}
+.cart{
+    display: grid;
+    grid-template-columns: 30% 20% 50%;
+}
+p{
+    display: block;
+}
