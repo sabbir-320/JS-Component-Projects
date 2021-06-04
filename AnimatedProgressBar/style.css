@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.skill-container{
+    width: 400px;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    margin-top: 20px;
+}
+.skill-container ul{
+    padding: 20px 0;
+}
+.skill-container li{
+    list-style-type: none;
+    color: #fff;
+    margin: 40px 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: relative;
+}
+.skill-container li::before{
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    border-radius: 1000px;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    
+}
+.skill-container li::after{
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    border-radius: 1000px;
+    width: 0;
+    height: 20px;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+.skill-container li.html::after{
+    animation-name: html;
+}
+@keyframes html{
+    to{
+        width: 95%;
+        background-color: #E7652D;
+    }
+}
+.skill-container li.css::after{
+    animation-name: css;
+}
+@keyframes css{
+    to{
+        width: 90%;
+        background-color: #3954E8;
+    }
+}
+.skill-container li.js::after{
+    animation-name: js;
+}
+@keyframes js{
+    to{
+        width: 80%;
+        background-color: #ECDD24;
+    }
+}
+.skill-container li.bootstrap::after{
+    animation-name: bootstrap;
+}
+@keyframes bootstrap{
+    to{
+        width: 99%;
+        background-color: #8800F6;
+    }
+}
+.skill-container li.sass::after{
+    animation-name: sass;
+}
+@keyframes sass{
+    to{
+        width: 99%;
+        background-color: #C66294;
+    }
+}
+.skill-container li.typescript::after{
+    animation-name: typescript;
+}
+@keyframes typescript{
+    to{
+        width: 50%;
+        background-color: #396EC0;
+    }
+}
+.skill-container li.react::after{
+    animation-name: react;
+}
+@keyframes react{
+    to{
+        width: 80%;
+        background-color: #66D1F2;
+    }
+}
