@@ -59,8 +59,14 @@ const rowDiv = document.querySelector(".row");
 
 // initial Show items
 const initialData = portfolioData.slice(0, 9);
-showItemsByBtnHandler(initialData)
+showItemsByBtnHandler(initialData);
 
+const allColumn = document.querySelectorAll(".column")
+console.log(allColumn);
+for(let i = 0; i < allColumn.length; i++){
+  console.log();
+  
+}
 // btn handler show items
 function showAll(thisBtn) {
   const allData = portfolioData.slice(0, 9);
@@ -69,17 +75,17 @@ function showAll(thisBtn) {
 }
 function nature(thisBtn) {
   const natureData = portfolioData.slice(0, 3);
-  showItemsByBtnHandler(natureData);
+  showItemsByBtnHandler(natureData, "nature");
   activeBtn(thisBtn)
 }
 function cars(thisBtn) {
   const carsData = portfolioData.slice(3, 6);
-  showItemsByBtnHandler(carsData);
+  showItemsByBtnHandler(carsData, "cars");
   activeBtn(thisBtn)
 }
 function people(thisBtn) {
   const carsData = portfolioData.slice(6, 9);
-  showItemsByBtnHandler(carsData);
+  showItemsByBtnHandler(carsData, "people");
   activeBtn(thisBtn)
 }
 
@@ -92,12 +98,12 @@ function activeBtn(currentBtn){
 
 
 function showItemsByBtnHandler(data) {
-  const newItem = data.map((item) => {
+  const newItem = data.map((items) => {
     const img = document.createElement("img");
     const p = document.createElement("p");
-    img.src = item.img;
-    img.alt = item.title;
-    p.textContent = item.text;
+    img.src = items.img;
+    img.alt = items.title;
+    p.textContent = items.text;
     return { img, p };
   });
 

@@ -1,173 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-* {
-  box-sizing: border-box;
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
 }
 
-body {
-  background-color: #f1f1f1;
-  padding: 20px;
-  font-family: Arial;
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
 }
 
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 50px;
-  word-break: break-all;
-}
-
-.row {
-  margin: 10px -16px;
-}
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  display: none; /* Hide all elements by default */
-}
-
-/* Clear floats after rows */ 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Content */
-.content {
-  background-color: white;
-  padding: 10px;
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
 }
 </style>
 </head>
 <body>
 
-<!-- MAIN (Center website) -->
-<div class="main">
+<h1>Image Zoom</h1>
 
-<h1>MYLOGO.COM</h1>
-<hr>
+<p>Mouse over the image:</p>
 
-<h2>PORTFOLIO</h2>
-
-<div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('nature')"> Nature</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('people')"> People</button>
+<div class="img-zoom-container">
+  <img id="myimage" src="https://www.w3schools.com/howto/img_girl.jpg" width="300" height="240">
+  <div id="myresult" class="img-zoom-result"></div>
 </div>
 
-<!-- Portfolio Gallery Grid -->
-<div class="row">
-  <div class="column nature">
-    <div class="content">
-      <img src="mountains.jpg" alt="Mountains" style="width:100%">
-      <h4>Mountains</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column nature">
-    <div class="content">
-    <img src="lights.jpg" alt="Lights" style="width:100%">
-      <h4>Lights</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column nature">
-    <div class="content">
-    <img src="nature.jpg" alt="Nature" style="width:100%">
-      <h4>Forest</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  
-  <div class="column cars">
-    <div class="content">
-      <img src="cars1.jpg" alt="Car" style="width:100%">
-      <h4>Retro</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column cars">
-    <div class="content">
-    <img src="cars2.jpg" alt="Car" style="width:100%">
-      <h4>Fast</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column cars">
-    <div class="content">
-    <img src="cars3.jpg" alt="Car" style="width:100%">
-      <h4>Classic</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-
-  <div class="column people">
-    <div class="content">
-      <img src="people1.jpg" alt="Car" style="width:100%">
-      <h4>Girl</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column people">
-    <div class="content">
-    <img src="people2.jpg" alt="Car" style="width:100%">
-      <h4>Man</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  <div class="column people">
-    <div class="content">
-    <img src="people3.jpg" alt="Car" style="width:100%">
-      <h4>Woman</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-<!-- END GRID -->
-</div>
-
-<!-- END MAIN -->
-</div>
-
+<p>The image must be placed inside a container with relative positioning.</p>
+<p>The result can be put anywhere on the page, but must have the class name "img-zoom-result".</p>
+<p>Make sure both the image and the result have IDs. These IDs are used when a javaScript initiates the zoom effect.</p>
 <script src="script.js"></script>
 
 </body>
