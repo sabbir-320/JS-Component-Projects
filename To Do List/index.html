@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+
+        }
+
+        .container>form {
+            width: 100%;
+            background-color: #F1473A;
+            padding: 40px 30px 40px 30px;
+        }
+
+        input {
+            border: none;
+            width: 80%;
+            padding: 8px;
+            float: left;
+            /*this closed empty space between input */
+            margin-bottom: 10px;
+            /*this margin dose not work cause float*/
+        }
+
+        input[type="text"] {
+            width: 80%;
+        }
+
+        input[type="submit"] {
+            width: 20%;
+            cursor: pointer;
+        }
+
+        ul {
+            width: 100%;
+            list-style-type: none;
+        }
+
+        ul li {
+            padding: 10px 0 10px 40px;
+            font-size: 25px;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        ul li:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        ul li:hover{
+            background-color: #ddd;
+        }
+
+        span {
+            float: right;
+            cursor: pointer;
+            height: 100%;
+            width: 40px;
+            text-align: center;
+        }
+
+        span:hover {
+            background: #F1473A;
+        }
+
+        .checked {
+            background: #888 !important;
+            color: #fff;
+            text-decoration: line-through;
+            position: relative;
+        }
+
+        .checked::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <h2 style="text-align: center; margin-bottom: 10px;">My To Do List</h2>
+            <input type="text" placeholder="Title..." id="title" required>
+            <input type="submit" value="Add">
+        </form>
+        <ul>
+            <li>Learn Qur'an</li>
+            <li>Five times Salat</li>
+            <li>Dawah</li>
+        </ul>
+    </div>
+    <script>
+        const allLi = document.querySelectorAll('li')
+        for (let i = 0; i < allLi.length; i++) {
+            const span = document.createElement("span")
+            const cross = document.createTextNode("\u00D7")
+            span.className = "close"
+            span.appendChild(cross)
+            allLi[i].appendChild(span)
+        }
+
+        // close item permanetlly
+        const closeBtn = document.querySelectorAll(".close")
+        for (let i = 0; i < closeBtn.length; i++) {
+            closeBtn[i].addEventListener("click", function () {
+                this.parentElement.style.display = "none";
+            })
+        }
+
+        // checked each item
+        const list = document.querySelector("ul")
+        list.addEventListener("click", function (ev) {
+            if (ev.target.tagName === "LI") {
+                ev.target.classList.toggle("checked")
+            }
+        })
+
+        // Create a new list item when clicking on the "Add" button
+        const getTitle = document.getElementById("title");
+        const addBtn = document.querySelector('[type="submit"]');
+        const ul = document.querySelector("ul");
+        addBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            if (getTitle.value === '') {
+                alert("please! write something")
+            } else {
+                const li = document.createElement("li")
+                const span = document.createElement("span")
+                const cross = document.createTextNode("\u00D7")
+                li.textContent = getTitle.value;
+                span.className = "close"
+                span.appendChild(cross)
+                li.appendChild(span)
+                ul.appendChild(li)
+            }
+            getTitle.value = ""
+            const closeBtn = document.querySelectorAll(".close")
+            for (let i = 0; i < closeBtn.length; i++) {
+                closeBtn[i].addEventListener("click", function () {
+                    this.parentElement.style.display = "none";
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

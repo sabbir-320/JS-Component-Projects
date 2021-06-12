@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <style>
+        .load{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -76px;
+            margin-left: -77px;
+            border: 16px solid lightgray;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation-name: spin;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes spin{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        .myDiv{
+            text-align: center;
+            font-size: 40px;
+            display: none;
+            position: relative;
+            animation: bodyAnimate 1s;
+        }
+        @keyframes bodyAnimate {
+            from{
+                bottom: -100px;
+                opacity: 0;
+            }
+            to{
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="load"></div>
+    <div class="myDiv">
+        hi welcome in our site!
+    </div>
+    <script>
+        const loader = document.querySelector(".load");
+        const myDiv = document.querySelector(".myDiv");
+        setTimeout(function(){
+            loader.style.display = "none"
+            myDiv.style.display = "block"
+        },2000)
+    </script>
+</body>
+</html>

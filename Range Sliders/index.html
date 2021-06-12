@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Sliders</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: auto;
+        }
+
+        .square-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background-color: #d3d3d3;
+            position: relative;
+        }
+
+        .squareBtn{
+            -webkit-appearance: none; 
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        .squareBtn::-webkit-squareBtn-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="square-range">
+            <input class="squareBtn" type="range" min="0" max="100"></input>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

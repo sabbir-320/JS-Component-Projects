@@ -1,0 +1,58 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, sans-serif;
+}
+.container{
+    max-width: 600px;
+    
+}
+/* month */
+.month{
+    background-color: #25BD9C;
+    padding: 80px 25px;
+    list-style-type: none;
+    color: #fff;
+    text-align: center;
+    font-size: large;
+}
+.prev{
+    float: left;
+}
+.next{
+    float: right;
+}
+/* week */
+.week{
+    list-style-type: none;
+    background-color: #DDDDDD;
+    width: 100%;
+    color: #666;
+    display: flex;
+}
+.week li{
+    flex: 14.28%;
+    text-align: center;
+}
+/* days */
+.days{
+    list-style-type: none;
+    background-color: #EEEEEE;
+    width: 100%;
+    padding: 20px 0;
+    color: #777;
+    display: flex;
+    flex-wrap: wrap;
+}
+.days li{
+    flex: 14.28%;
+    text-align: center;
+    padding: 6px 0;
+}
+.active{
+    background-color: #25BD9C;
+    color: #fff;
+}
